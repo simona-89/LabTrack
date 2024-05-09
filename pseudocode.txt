@@ -1,0 +1,57 @@
+LabTrack is a tool which allow you to track Hemoglobin and Ferritin levels following details from e-sveikata.
+User should have folder with PDF files created and downloaded from personal account https://www.esveikata.lt/.
+
+Parameters could be tracked if PDFs were created following selection and steps below:
+Sveikatos duomenys > Sveikatos Istrija > Dokumentai > Ambulatorinis apsilankymas > gyd. istaigos irasai >
+> Dokumentai > E025 Ambulatorinio apsilankymo aprašymas > Print > Save as PDF
+
+
+
+    # Clear terminal
+    # Print welcome_message
+    # Clear terminal
+    # Print menu_options ask for selection
+        # [1] User should share the path, program should check if path/ folder exists. Return var which holds path (or appropriate pdf files to search for again?).
+            # Print message what could be done here
+            # while Ture: ? to keep asking for is_valid_path
+            # Ask for a path or back (return to menu_options)
+            # IF is_valid_path:
+                # Print that path valid (apply color)
+                # Check IF is_pdf_found:
+                    # Create an empty list pdf_data [] or dict {} >>> which method is better, if i might need to reuse in other parts? should empty list be in outer scope?
+                    # Use PyPDF2 Pdfreader to read metadata
+                    # Check IF pdf metadata contains Title: E. sveikatos portalas:
+                        # append pdf to pdf_data can be analysed
+                    # ELSE:
+                        # append pdf to pdf can't be analysed
+                # ELSE:
+                    # Print any pdf found
+                    # Ask for a path or back (return to menu_options)
+            # ELSE:
+                # Print that path invalid (apply color)
+                # Ask for a path or back (return to menu_options)
+            # Handle EOFError and KeyboardInterrupt
+        # [2] Program should be able to access pdf files which are in the list can be analysed
+            # Run this part IF case [1] returns list of pdf files can be analysed:
+                # Print message what could be done here
+                # Print parameters [1] Hemoglobin, [2] Ferritin
+                # Ask to select or back (return to menu_options)
+                    # Check IF there is any data extracted for selected parameter
+                    # Print each result with associated levels and date in lines
+                    # Sort results from the oldest
+                    # Apply colors for results if not follow the associated levels (red when below or above, green - ok, yellow when levels not provided by lab.)
+                    # Compare n with n+1 and add sign of arrow down if decreased and arrow up if increased
+            # ELSE:
+                # Print you have to upload files I could analyse first >>> seems not logical here, maybe should be validated before selection [2]?
+                # Return to menu_options
+            # Handle EOFError and KeyboardInterrupt
+        # [3] Create .csv file
+            # Ask IF user wants to save results he saw by creating YYYY-MM-DD_results.csv file in the same path?
+                # Create file
+            # ELSE:
+                # Return to menu_options
+            # Handle EOFError and KeyboardInterrupt
+    # Ask for user_input
+    # Handle EOFError and KeyboardInterrupt
+
+# I think that each time program runs, user should update the path firsty, do not have an option to store data and continue working
