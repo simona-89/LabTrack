@@ -33,7 +33,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# TODO EOFError and KeyboardInterrupt repeats a lot. How to handle in one place?
-    # Also more user friendly approach be to double check if want to exit, now terminates.
