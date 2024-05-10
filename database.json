@@ -3,104 +3,156 @@
     "EsveikAnt.pdf": {
         "Report date & time": "2024-02-15 00:00",
         "Hemoglobin": {
-            "result": "110",
-            "levels from lab.": "120 - 150",
+            "result": 110.0,
+            "levels from lab.": "120.0 - 150.0",
             "analysed on": "2024.02.14"
+        },
+        "Ferritin": {
+            "result": null,
+            "levels from lab.": null,
+            "analysed on": null
         }
     },
     "EsveikAnteja.pdf": {
         "Report date & time": "2024-01-25 11:12",
         "Hemoglobin": {
-            "result": "99",
-            "levels from lab.": "Levels not found",
+            "result": 99.0,
+            "levels from lab.": null,
             "analysed on": "2024-01-25"
+        },
+        "Ferritin": {
+            "result": null,
+            "levels from lab.": null,
+            "analysed on": null
         }
     },
     "EsveikAnteja2.pdf": {
         "Report date & time": "2024-01-17 12:48",
         "Hemoglobin": {
-            "result": "100",
-            "levels from lab.": "Levels not found",
+            "result": 100.0,
+            "levels from lab.": null,
             "analysed on": "2024-01-17"
+        },
+        "Ferritin": {
+            "result": null,
+            "levels from lab.": null,
+            "analysed on": null
         }
     },
     "EsveikKedLig.pdf": {
         "Report date & time": "2023-11-22 13:25",
         "Hemoglobin": {
-            "result": "117",
-            "levels from lab.": "120 - 150",
+            "result": 117.0,
+            "levels from lab.": "120.0 - 150.0",
             "analysed on": "2023-11-22"
+        },
+        "Ferritin": {
+            "result": null,
+            "levels from lab.": null,
+            "analysed on": null
         }
     },
     "EsveikKedPol.pdf": {
         "Report date & time": "2023-11-22 08:06",
         "Hemoglobin": {
-            "result": "129",
-            "levels from lab.": "120 - 150",
+            "result": 129.0,
+            "levels from lab.": "120.0 - 150.0",
             "analysed on": "2023-11-22"
+        },
+        "Ferritin": {
+            "result": null,
+            "levels from lab.": null,
+            "analysed on": null
         }
     },
     "EsveikRezus.pdf": {
         "Report date & time": "2024-01-12 07:22",
         "Hemoglobin": {
-            "result": "122",
-            "levels from lab.": "117.00-145.00",
+            "result": 122.0,
+            "levels from lab.": "117.0 - 145.0",
             "analysed on": "2024-01-12"
+        },
+        "Ferritin": {
+            "result": null,
+            "levels from lab.": null,
+            "analysed on": null
         }
     },
     "EsveikRezus2.pdf": {
         "Report date & time": "2024-01-05 07:06",
         "Hemoglobin": {
-            "result": "110",
-            "levels from lab.": "117.00-145.00",
+            "result": 110.0,
+            "levels from lab.": "117.0 - 145.0",
+            "analysed on": "2024-01-05"
+        },
+        "Ferritin": {
+            "result": 581.0,
+            "levels from lab.": "13.0 - 232.0",
             "analysed on": "2024-01-05"
         }
     },
     "EsveikRezus3.pdf": {
         "Report date & time": "2023-12-15 09:18",
         "Hemoglobin": {
-            "result": "116",
-            "levels from lab.": "117.00-145.00",
+            "result": 116.0,
+            "levels from lab.": "117.0 - 145.0",
             "analysed on": "2023-12-15"
-        }
-    },
-    "EsveikSanta.pdf": {
-        "Report date & time": "2024-01-09 13:41",
-        "Hemoglobin": {
-            "result": "116",
-            "levels from lab.": "2024-01",
-            "analysed on": "2024-01-09"
+        },
+        "Ferritin": {
+            "result": null,
+            "levels from lab.": null,
+            "analysed on": null
         }
     },
     "EsveikVRCP.pdf": {
         "Report date & time": "2024-04-26 00:00",
         "Hemoglobin": {
-            "result": "101",
-            "levels from lab.": "117 - 145",
+            "result": 101.0,
+            "levels from lab.": "117.0 - 145.0",
+            "analysed on": "2024.03.21"
+        },
+        "Ferritin": {
+            "result": 96.4,
+            "levels from lab.": "10.0 - 291.0",
             "analysed on": "2024.03.21"
         }
     },
     "EsveikVRCP2.pdf": {
         "Report date & time": "2024-04-08 00:00",
         "Hemoglobin": {
-            "result": "101",
-            "levels from lab.": "117 - 145",
+            "result": 101.0,
+            "levels from lab.": "117.0 - 145.0",
+            "analysed on": "2024.03.21"
+        },
+        "Ferritin": {
+            "result": 96.4,
+            "levels from lab.": "10.0 - 291.0",
             "analysed on": "2024.03.21"
         }
     },
     "EsveikVRCP3.pdf": {
         "Report date & time": "2024-03-21 00:00",
         "Hemoglobin": {
-            "result": "101",
-            "levels from lab.": "117 - 145",
+            "result": 101.0,
+            "levels from lab.": "117.0 - 145.0",
+            "analysed on": "2024.03.21"
+        },
+        "Ferritin": {
+            "result": 96.4,
+            "levels from lab.": "10.0 - 291.0",
             "analysed on": "2024.03.21"
         }
     },
     "EsveikVRCP4.pdf": {
         "Report date & time": "2024-02-26 00:00",
         "Hemoglobin": {
-            "result": "111",
-            "levels from lab.": "117 - 145",
+            "result": 111.0,
+            "levels from lab.": "117.0 - 145.0",
+            "analysed on": "2024.02.22"
+        },
+        "Ferritin": {
+            "result": 195.9,
+            "levels from lab.": "10.0 - 291.0",
             "analysed on": "2024.02.22"
         }
     },
