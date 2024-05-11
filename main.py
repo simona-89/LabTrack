@@ -23,10 +23,20 @@ def main():
         if user_say == "1":
             is_valid_path_pdf(myfilemanager)
         elif user_say == "2":
-            create_database(myfilemanager.filepath)
-            track_details()
+            if myfilemanager.is_valid_path():
+                create_database(myfilemanager.filepath)
+                track_details()
+            else:
+                input("\nPls fix, before continue...")
+                clear_screen()
+                continue
         elif user_say == "3":
-            export_to_csv(myfilemanager.filepath)
+            if myfilemanager.is_valid_path():
+                export_to_csv(myfilemanager.filepath)
+            else:
+                input("\nPls fix, before continue...")
+                clear_screen()
+                continue
         elif user_say == "4":
             quit_program()
 
