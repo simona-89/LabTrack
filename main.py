@@ -5,7 +5,11 @@ from helper_functions import welcome_message, menu, quit_program
 from export_functions import export_to_csv
 
 
-def main():
+def main() -> None:
+    """Main f-tion to run app.\n
+       Prints main menu, initializes FileManager,
+       calls other f-tions followed by user's choices.
+    """
     myfilemanager = FileManager()
     clear_screen()
     welcome_message()
@@ -43,3 +47,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
