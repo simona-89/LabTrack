@@ -6,7 +6,18 @@ from helper_functions import quit_program
 from ux_functions import clear_screen, in_bold
 
 
-def export_to_csv(pdf_dir):
+def export_to_csv(pdf_dir: str) -> None:
+    """
+    F-tion to print selections and allow export data to a CSV.\n
+       Handle selections while asking for user input.\n
+       Related to create_csv f-tion which takes care of creation of CSV.
+
+    Args:
+        pdf_dir (str): Dir where CSV file be saved.
+    Raises:
+        EOFError: If caused by user input, terminates without a notice.
+        KeyboardInterrupt: If caused by user input, terminates without a notice.
+    """
     save_csv_in_dir = pdf_dir
     while True:
         clear_screen()
@@ -31,11 +42,21 @@ def export_to_csv(pdf_dir):
             break
 
 
-def create_csv(csv_dir):
+def create_csv(csv_dir: str) -> None:
+    """
+    F-tion to create a CSV file from the data in a JSON file.\n
+    To read data in JSON and formats it into rows\n
+    To sort by parameter and after report date & time.\n
+    To check if CSV file created successfully in the path.\n
+    Related to export_to_csv, as get the path details to create CSV inside.
+
+    Args:
+        csv_dir (str): Dir where CSV file be saved.
+    """
     while True:
         clear_screen()
         print(in_bold("[ Export & Save ]\n"))
-        
+
         with open("database.json", "r") as file:
             data = json.load(file)
 
@@ -81,3 +102,4 @@ def create_csv(csv_dir):
             input("Failed to create 'results.csv'")
             clear_screen()
             return
+
