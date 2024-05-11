@@ -3,12 +3,26 @@ import re
 import os
 
 from datetime import datetime
+from typing import Dict, Optional, Union
+import FileManager
 from helper_functions import quit_program
 from pdfminer.high_level import extract_text
 from ux_functions import clear_screen, in_bold
 
 
-def is_valid_path_pdf(myfilemanager):
+def is_valid_path_pdf(myfilemanager: FileManager) -> None:
+    """
+    Validates the path and checks if PDF files are and are valid.\n
+    Prints messages following results from validation,
+    calling methods of the class is_valid_path, is_valid_pdf.\n
+    Handle user input while asking for navigation.
+
+    Args:
+        myfilemanager (FileManager): An instance of the class to take care of validation.
+    Raises:
+        EOFError: If caused by user input, terminates without a notice.
+        KeyboardInterrupt: If caused by user input, terminates without a notice.
+    """
     while True:
         clear_screen()
         print(in_bold("[ Upload your lab. test files ]\n"))
@@ -48,9 +62,17 @@ def is_valid_path_pdf(myfilemanager):
             quit_program()
 
 
-def create_database(pdf_dir):
+def create_database(pdf_dir: str) -> None:
+    """
+    Creates database in JSON file from the PDFs.\n
+    Extracted text from PDFs has to have "E. sveikatos portalas" to call extract_data.\n
+    Extracted data is formatted following extract_data and saved into "database.json".
+
+    Args:
+        pdf_dir (str): Dir to collect PDFs from.
+    """
     print("... Please wait details are beeing extracted now...")
-    
+
     data_from_pdf = {}
     raw_data = {}
 
@@ -73,7 +95,18 @@ def create_database(pdf_dir):
     #     json.dump(raw_data, file, indent=4)
 
 
-def extract_data(text):
+def extract_data(text: str)-> Dict[str, Union[str, Dict[str, Optional[str]]]]:
+    """
+    Extracts specific details from the given text,
+    following specific structure.\n
+    If value is not found, leaves by default None.
+
+    Args:
+        text (str): Extracted text passed to other functions, which apply regex.
+
+    Returns:
+        Dict[str, Union[str, Dict[str, Optional[str]]]]: The extracted data.
+    """
 
     # Initialize the dictionary with all keys and None values
     extracted_data = {
@@ -248,3 +281,4 @@ def sorted_details(parameter):
                 return
         except (EOFError, KeyboardInterrupt):
             quit_program()
+
