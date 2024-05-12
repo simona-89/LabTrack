@@ -2,28 +2,58 @@
 
 https://github.com/simona-89/LabTrack.git
 
-LabTrack is a basic tool which allow you to track Hemoglobin and Ferritin levels from your blood tests which are accessible from your personal account from e-sveikata.
-User should have folder with PDF files created and downloaded from personal account https://www.esveikata.lt/.
+**LabTrack** is a basic tool that allows you to track **Hemoglobin & Ferritin** levels from your blood tests, accessible from your personal account on e-sveikata.
+Users should create a folder with PDF files downloaded from their personal account at https://www.esveikata.lt/. 
+LabTrack reads data from these PDFs and displays Hemoglobin & Ferritin results and levels, along with the date of analysis, in a single row if found.
+This tool saves time and energy by enabling quick comparison of blood test results with previous ones.
+However, LabTrack only extracts the data it finds and its not perfect due to complexity of extracting data from PDFs.
+**Advice: if results are outside the normal range, users should consult their doctor for advice.**
+
+## Table of Contents
+
+- [Features](#features)
+- [How to Run](#how-to-run)
+- [How to Use](#how-to-use)
+- [Dependencies](#dependencies)
+- [Limitations and Future Improvements](#limitations-and-future-improvements)
+- [Contact](#contact)
+- [Contributions](#contributions)
 
 
 ## Features
 
-**Upload your lab. test files**: Thos feature allows you upload pdf files from your PC.
+**Upload your lab. test files**: Enables uploading PDF files from your computer.
 
-**Track specific details**: This feature allows you to track 'Hemoglobin' or 'Ferritin' levels.
+**Track specific details**: Allows tracking of Hemoglobin or Ferritin results. Results and levels for each parameter are displayed in ascending order based on the report's date of issue.
 
-**Export & Save CSV**: This feature allows you to save extracted details in CSV file.
+**Export & Save CSV**: Saves extracted details in a CSV file on your PC, in the same folder where the PDF files were read from. The details are sorted by parameter and the report's date of issue.
 
 
 ## How to Run
 
-To run the LabTrack application, navigate to the directory containing the `main.py` file in your terminal and run the following command:
+To launch the LabTrack application, open your terminal, navigate to the directory where the main.py file is located, and execute the following command:
 
 ```bash
 python main.py
 
 ```
-This will start the application and display the menu.
+
+This command initiates the application and presents the main menu as below. 
+For optimal usage, please refer to the **How to Use** section for detailed instructions.
+
+**Welcome to LabTrack**
+Your personal assistant to track your blood test results.
+
+**LabTrack is here to help you:**
+[1] Upload your lab. test files
+[2] Track specific details
+[3] Export & Save CSV
+[4] Exit
+**Type selection here:**
+
+Select the number corresponding to the feature you wish to access, or choose 'Exit' to quit. 
+Please be aware that the application will continue to prompt for a valid option until one is provided. 
+If an EOFError or KeyboardInterrupt occurs, the application will terminate
 
 ## How to Use
 
@@ -33,29 +63,20 @@ Before starting the application, you need to do some preparation.
 
 1. Sign to your https://www.esveikata.lt/
 2. Find & select "Sveikatos duomenys" (on the top row of the page)
+![EsveikataMainMenu](img_readme/EsveikataMainMenu.png)
+
 3. Find & select "Sveikatos Istrija" (selection from navbar "Sveikatos duomenys")
 4. Find & select "Dokumentai" (navbar on the left top)
 5. Find & select "Ambulatorinis apsilankymas"
 6. Notice records uploaded from your visits at clinics & hospitals (on the right side on the page)
 7. Each record has sections "Apsilankymo suvestinė" & "Dokumentai"
 8. Select "Dokumentai" and look for uploaded forms as "E025 Ambulatorinio apsilankymo aprašymas"
+![EsveikataSub-Menu](img_readme/EsveikataSub-Menu.png)
+
 9. Open forms "E025 Ambulatorinio apsilankymo aprašymas" and use mouse right-click to create PDF (print>save)
+![EsveikataValidFormCreateValidPdf](img_readme/EsveikataValidFormCreateValidPdf.png)
 
-Please note that this version of LabTrack was desidned and tested mainly to read data from these forms and in case they are saved as PDF in this way.
-
-### Running the LabTrack
-
-If you are finished with preparation, you will see the menu with the following options:
-
-LabTrack is here to help you:
-[1] Upload your lab. test files
-[2] Track specific details
-[3] Export & Save CSV
-[4] Exit
-Type selection here: 
-
-Enter the number of your choice to access the corresponding module or Exit. 
-Please note that here and while choosing from other options, application will keep asking for valid option. In case of EOFError or KeyboardInterrupt application will terminate.
+This version of LabTrack is tested to efficiently read data from the designated forms, assuming they are saved as PDFs in the manner described.
 
 ## Dependencies
 LabTrack uses external libraries as below.
@@ -74,17 +95,24 @@ pip install colorama
 
 ## Limitations and Future Improvements
 
-LabTrack currently reads data from specific PDF files, also there is very high dependency on the patterns used to find and extract specific details, areas below could be improved:
+LabTrack currently has limitations in its ability to read data from specific PDF files, heavily rely on the patterns used to extract details. 
+Areas for improvement include:
 
-1. **Flexibility**: Currently, the application supports only one type of documents, created in specific way as PDFs. In the next version, it could be made more flexible by having possibilities to read details from PDFs when data is in the tables or as graph bars. It might be worth thinking if there are files which allow to work with data easier than PDFs and could be generated from https://www.esveikata.lt/.
+1. **Flexibility**: 
+- The application currently supports only one type of document, created in a specific way as PDFs. 
+- Future versions could enhance flexibility by supporting data extraction from tables or graph bars in PDFs.
+- Additionally, exploring alternative file formats that facilitate easier data manipulation could be beneficial, considering the possibility of generating such files from https://www.esveikata.lt/.
 
-2. **Error Handling**: Not all errors are handled and could be improved:
-- While working with .json and .csv files not currently handling the errors. 
-- Pending problem not solved, as now program could run using valid path without valid pdf files as user could run options as [2] Track specific details, [3] Export & Save CSV, and do not get any results, this approach is not informative and sign of a bad desing. Planning to improve this.
+2. **Error Handling**: 
+- Improvements are needed in error handling, particularly for.json and.csv files.
+- The current approach allows the app to run with valid paths but without valid PDFs, leading to uninformative outcomes and indicating poor design.Enhancing error handling and providing clearer feedback for invalid inputs are planned.
 
-3. **Features**: Currently, application allows to print only details in ascending order and this could be improved by adding more options how data could be presented. Extracted details, when printed on CLI does not support coloring of the results (to visually show if parameter is in acceptable levels or not) this could imporve UX. Also now the validated path in the begining is used as a path to save results.csv file, this could be improved by allowing uses to choose the path.
+3. **Features**: 
+- The app currently prints results of Hemoglobin & Ferritin in ascending order only. Future enhancements could include more presentation options for extracted data, such as colored output in the CLI to visually indicate parameter levels.
+- The validated path is used to save results.csv. In the future this could be improved by allowing user to select path he wants to save the results and create file name.
+- Possibility to navigate through all parameters and their categories, beyond just Hemoglobin & Ferritin, would benefit users of e.sveikata to reach and track their results more efficiently.
 
-4. **Code Structure**: Current code could be imporved reducing code inside file_manager.py by separating functions and creating separate files for data extraction, meniu options, specific actions. Solutions to reuse code should be found, refactoring to use more OOP could be beneficial.
+4. **Code Structure**: The current code structure could be imporved by reducing functions inside file_manager.py, separating them following the actions and creating different files. Refactoring and implementation of OOP could enhance code reusability and maintainability.
 
 Please note that these improvements would require significant changes to the application's codebase and are intended for future versions of the application.
 
@@ -92,4 +120,4 @@ Please note that these improvements would require significant changes to the app
 For any issues or suggestions related to LabTrack, please contact the maintainers.
 
 ## Contributions
-In case of the further ideas or willingnes to cooperate on this application, please contact the maintainers for more details.
+We welcome ideas to collaborate on the app, please contact the maintainers for more details.
