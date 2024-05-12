@@ -2,11 +2,11 @@
 
 https://github.com/simona-89/LabTrack.git
 
-**LabTrack** is a basic tool that allows you to track **Hemoglobin & Ferritin** levels from your blood tests, accessible from your personal account on e-sveikata.
-Users should create a folder with PDF files downloaded from their personal account at https://www.esveikata.lt/. 
-LabTrack reads data from these PDFs and displays Hemoglobin & Ferritin results and levels, along with the date of analysis, in a single row if found.
-This tool saves time and energy by enabling quick comparison of blood test results with previous ones.
-However, LabTrack only extracts the data it finds and its not perfect due to complexity of extracting data from PDFs.
+**LabTrack** is a basic tool that allows you to track **Hemoglobin & Ferritin** levels from your blood tests, accessible from your personal account on e-sveikata.  
+Users should create a folder with PDF files downloaded from their personal account at https://www.esveikata.lt/.  
+LabTrack reads data from these PDFs and displays Hemoglobin & Ferritin results and levels, along with the date of analysis, in a single row if found.  
+This tool saves time and energy by enabling quick comparison of blood test results with previous ones.  
+However, LabTrack only extracts the data it finds and its not perfect due to complexity of extracting data from PDFs.  
 **Advice: if results are outside the normal range, users should consult their doctor for advice.**
 
 ## Table of Contents
@@ -38,47 +38,15 @@ python main.py
 
 ```
 
-This command initiates the application and presents the main menu as below. 
+This command initiates the application and presents the main menu.  
+Select the number corresponding to the feature you wish to access, or choose 'Exit' to quit.  
+Please be aware that the application will continue to prompt for a valid option until one is provided.  
+If an EOFError or KeyboardInterrupt occurs, the application will terminate.  
 For optimal usage, please refer to the **How to Use** section for detailed instructions.
 
-**Welcome to LabTrack**
-Your personal assistant to track your blood test results.
 
-**LabTrack is here to help you:**
-[1] Upload your lab. test files
-[2] Track specific details
-[3] Export & Save CSV
-[4] Exit
-**Type selection here:**
+### Dependencies
 
-Select the number corresponding to the feature you wish to access, or choose 'Exit' to quit. 
-Please be aware that the application will continue to prompt for a valid option until one is provided. 
-If an EOFError or KeyboardInterrupt occurs, the application will terminate
-
-## How to Use
-
-### Preparation
-
-Before starting the application, you need to do some preparation.
-
-1. Sign to your https://www.esveikata.lt/
-2. Find & select "Sveikatos duomenys" (on the top row of the page)
-![EsveikataMainMenu](img_readme/EsveikataMainMenu.png)
-
-3. Find & select "Sveikatos Istrija" (selection from navbar "Sveikatos duomenys")
-4. Find & select "Dokumentai" (navbar on the left top)
-5. Find & select "Ambulatorinis apsilankymas"
-6. Notice records uploaded from your visits at clinics & hospitals (on the right side on the page)
-7. Each record has sections "Apsilankymo suvestinė" & "Dokumentai"
-8. Select "Dokumentai" and look for uploaded forms as "E025 Ambulatorinio apsilankymo aprašymas"
-![EsveikataSub-Menu](img_readme/EsveikataSub-Menu.png)
-
-9. Open forms "E025 Ambulatorinio apsilankymo aprašymas" and use mouse right-click to create PDF (print>save)
-![EsveikataValidFormCreateValidPdf](img_readme/EsveikataValidFormCreateValidPdf.png)
-
-This version of LabTrack is tested to efficiently read data from the designated forms, assuming they are saved as PDFs in the manner described.
-
-## Dependencies
 LabTrack uses external libraries as below.
 
 - pdfminer.high_level: This is a part of the pdfminer.six library, which is a Python package for extracting text, images, metadata, and more from PDF files. It can be installed with pip.
@@ -92,6 +60,54 @@ pip install pdfminer.six
 pip install PyPDF2
 pip install colorama
 ```
+
+
+## How to Use
+
+### Preparation
+
+Before starting the application, you need to do some preparation.
+
+1. Sign to your https://www.esveikata.lt/
+2. Find & select "Sveikatos duomenys" (on the top row of the page)
+![EsveikataMainMenu](img_readme/EsveikataMainMenu.png)
+
+3. Find & select "Sveikatos Istorija" (selection from navbar "Sveikatos duomenys")
+4. Find & select "Dokumentai" (navbar on the left top)
+5. Find & select "Ambulatorinis apsilankymas"
+6. Notice records uploaded from your visits at clinics & hospitals (on the right side on the page)
+7. Each record has sections "Apsilankymo suvestinė" & "Dokumentai"
+8. Select "Dokumentai" and look for uploaded forms as "E025 Ambulatorinio apsilankymo aprašymas"
+![EsveikataSub-Menu](img_readme/EsveikataSub-Menu.png)
+
+9. Open forms "E025 Ambulatorinio apsilankymo aprašymas" and use mouse right-click to create PDF (print>save)
+![EsveikataValidFormCreateValidPdf](img_readme/EsveikataValidFormCreateValidPdf.png)
+
+This version of LabTrack is tested to efficiently read data from the designated forms, assuming they are saved as PDFs in the manner described.
+
+### While Running
+
+Once LabTrack is running, the main menu will appear as below.
+
+![LabTrackMain](img_readme/LabTrackMain.png)
+
+To make selections within the navigation menu, simply enter the corresponding numbers.
+
+Initially, validate the path by selecting **[1] Upload your lab. test files.**  
+Once this is done, you'll be able to access other options.  
+
+Option **[2] Track specific details** enables you to choose one of the parameters to view results and levels, which will then be printed on the terminal as illustrated below.
+
+![LabTrackOption2](img_readme/LabTrackOption2.png)
+
+![LabTrackSelectedParameterResultsPrinted](img_readme/LabTrackSelectedParameterResultsPrinted.png)
+
+Option **[3] Export & Save CSV** allows you to export the details to results.csv file, saving it in the path that was previously validated.
+
+![LabTrackOption3](img_readme/LabTrackOption3.png)
+
+![LabTrackCSVCreated](img_readme/LabTrackCSVCreated.png)
+
 
 ## Limitations and Future Improvements
 
@@ -117,7 +133,9 @@ Areas for improvement include:
 Please note that these improvements would require significant changes to the application's codebase and are intended for future versions of the application.
 
 ## Contact
+
 For any issues or suggestions related to LabTrack, please contact the maintainers.
 
 ## Contributions
+
 We welcome ideas to collaborate on the app, please contact the maintainers for more details.
