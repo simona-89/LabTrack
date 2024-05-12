@@ -9,14 +9,14 @@ from ux_functions import clear_screen, in_bold
 def export_to_csv(pdf_dir: str) -> None:
     """
     F-tion to print selections and allow export data to a CSV.\n
-       Handle selections while asking for user input.\n
-       Related to create_csv f-tion which takes care of creation of CSV.
+    Handle selections while asking for user input.\n
+    Related to create_csv() f-tion which takes care of creation of CSV.
 
     Args:
         pdf_dir (str): Dir where CSV file be saved.
     Raises:
-        EOFError: If caused by user input, terminates without a notice.
-        KeyboardInterrupt: If caused by user input, terminates without a notice.
+        EOFError: when caused by user, terminates without a notice.
+        KeyboardInterrupt: When caused by user, terminates without a notice.
     """
     save_csv_in_dir = pdf_dir
     while True:
@@ -60,10 +60,13 @@ def create_csv(csv_dir: str) -> None:
         with open("database.json", "r") as file:
             data = json.load(file)
 
+        # Store data to write into CSV
         rows = []
+
         for filename, details in data.items():
             if details is not None:
                 report_date = datetime.strptime(details["Report date & time"], "%Y-%m-%d %H:%M")
+                # Iterrate over details dict
                 for parameter, report in details.items():
                     if parameter != "Report date & time" and report["result"] is not None:
                         rows.append({
@@ -78,9 +81,12 @@ def create_csv(csv_dir: str) -> None:
         # Sort the rows by parameter and then by date
         rows.sort(key=lambda row: (row["parameter"], row["report_date"]))
 
+        # Set the path and file name
         csv_save_as = f"{csv_dir}/results.csv"
+
         with open(csv_save_as, "w", newline="") as file:
             writer = csv.writer(file)
+            # Create header row
             writer.writerow(["Report", "Issued on", "Parameter",
                              "Result", "Lab. limits", "Analysed on"])
             for row in rows:
@@ -93,7 +99,7 @@ def create_csv(csv_dir: str) -> None:
                     row["analysed on"]
                 ])
 
-        # Check if the file was created successfully
+        # Check if the file was created successfully and print message to user
         if os.path.exists(csv_save_as):
             input(f"File 'results.csv' was created successfully at {csv_save_as}")
             clear_screen()
