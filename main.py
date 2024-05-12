@@ -1,14 +1,15 @@
+from export_functions import export_to_csv
 from FileManager import FileManager
-from ux_functions import clear_screen, in_bold
 from file_manager import is_valid_path_pdf, create_database, track_details
 from helper_functions import welcome_message, menu, quit_program
-from export_functions import export_to_csv
+from ux_functions import clear_screen, in_bold
 
 
 def main() -> None:
-    """Main f-tion to run app.\n
-       Prints main menu, initializes FileManager,
-       calls other f-tions followed by user's choices.
+    """
+    Main f-tion to run app.\n
+    Prints main menu, initializes FileManager,
+    calls other f-tions followed by user's choices.
     """
     myfilemanager = FileManager()
     clear_screen()
